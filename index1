@@ -26,16 +26,51 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <title>Jane Doe | Web Developer</title>
+    <title>Vishal Sundar | Software Engineer</title>
   </head>
 
   <body>
     <!-- Navbar -->
-
+    <nav>
+      <h1>VISHAL SUNDAR</h1>
+      <ul class="navigation">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="burger-menu" id="burger-menu">
+        <ion-icon class="bars" name="menu-outline"></ion-icon>
+      </button>
+    </nav>
     <!-- Hero Section -->
-
+     <section class="hero" id="about">
+      <img
+        src="assets/images/wfh_1.svg"
+        alt="jane-doe"
+        loading="lazy"
+        class="hero-img"
+      />
+      <div class="bio animate__animated animate__shakeX">
+        <h2 class="bio-title">About Me</h2>
+        <p class="bio-text">
+          I'm passionate about leveraging technology to drive positive change. With a solid foundation in Computer Science and a penchant for innovative problem-solving, I strive to make an impact that transcends lines of code.
+        </p>
+      </div>
+</section>
     <!-- More about -->
-
+    <section class="more-about">
+      <h2>More About Me</h2>
+      <p>
+        My academic journey at Arizona State University's Ira A. Fulton Schools of Engineering provided me with a strong foundation in Computer Science. Through collaborative projects like the Sun Devil Satellite Club, where I delved into hyperspectral cameras, I honed my ability to harness technology for tangible solutions. By optimizing processing times and enhancing image quality, I demonstrated my commitment to both technical prowess and practical impact.
+      </p>
+      <p>
+        In the realm of leadership, I've led my own private tutoring business, creating tailored study plans that elevated students' academic performance and test scores. My dedication to individual growth extends to my role as a Mental Health Mobile Game Research Lead and Software Developer. Collaborating to develop a mobile app aimed at aiding Native American communities, I sought to bridge cultural disparities and address pressing mental health challenges.
+      </p>
+      <p>
+        My skills span an array of programming languages, from C++ to Flutter, alongside tools like MATLAB and GitHub. This diverse skill set equips me to explore novel avenues and bring fresh perspectives to every endeavor.
+      </p>
+    </section>
     <!-- Skills section -->
 
     <!-- Projects section -->
@@ -43,6 +78,8 @@
     <!-- Contact section -->
 
     <!-- Social accounts - Fixed to the right -->
+
+    <!-- Scroll to top -->
 
     <!-- Footer section -->
 
