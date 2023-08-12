@@ -1,9 +1,8 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap");
 
 
 /* Variables */
-:root {
+/* :root {
   --font-family: "Montserrat", sans-serf;
   --normal-font: 400;
   --bold-font: 700;
@@ -17,12 +16,56 @@
   --bottom-margin-2: 1rem;
   --line-height: 1.7rem;
   --transition: 0.3s;
+} */
+
+
+:root {
+  --font-family: "Montserrat", sans-serf;
+  --normal-font: 400;
+  --bold-font: 700;
+  --bolder-font: 900;
+  --bg-color: #333;
+  --navbar-color: #ffffff;
+  --nava-color: #cd8f50;
+  --primary-color: #f5f5f5;
+  --secondary-color: #a54f2a;
+  --primary-shadow: rgb(88, 65, 171);;
+  --secondary-shadow: #a17a69;
+  --bottom-margin: 0.5rem;
+  --bottom-margin-2: 1rem;
+  --line-height: 1.7rem;
+  --transition: 0.3s;
 }
+
 /* Variables end */
 
 html {
   scroll-behavior: smooth;
 }
+
+
+.fade-in {
+  opacity: 0;
+  animation-fill-mode: forwards; /* Keep the opacity at the end of animation */
+}
+
+
+.fade-in {
+  opacity: 0;
+  animation: fade-in 3s ease-out forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* CSS Resets */
 * {
@@ -40,11 +83,19 @@ a {
   color: var(--primary-color);
 }
 
+a,
+nav a,
+nav a:hover {
+  color: var(--navbar-color); /* Set link color to secondary color */
+}
+
 a:hover {
-  color: var(--secondary-color);
+  color: var(--navbar-color);
 }
 
 body {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
   font-family: var(--font-family);
 }
 
@@ -57,16 +108,20 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 3.5rem;
-  background-color: var(--bg-color);
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  background-color: rgb(88, 65, 171);
+  color: var(--primary-color);
+  /* box-shadow: 0 3px 5px rgba(242, 229, 229, 0.1); */
+  box-shadow: 0 5px 15px rgba(251, 250, 250, 0.3);
+
 }
 
 nav h1 {
-  color: var(--primary-color);
+  color: var(--navbar-color);
+  /* margin-left: 5rem; */
 }
 
 nav a {
-  color: var(--primary-color);
+  color: var(--nava-color);
   transition: var(--transition);
 }
 nav a:hover {
@@ -99,6 +154,7 @@ nav ul li {
   gap: 2.5rem;
   max-width: 68.75rem;
   margin: auto;
+  margin-top: 2.5rem;
 }
 
 .hero img {
@@ -113,6 +169,8 @@ nav ul li {
   box-shadow: 0px 2px 15px 2px var(--primary-shadow);
 }
 
+
+
 .bio h1 {
   margin-bottom: var(--bottom-margin);
 }
@@ -125,6 +183,9 @@ nav ul li {
 .more-about {
   background-color: var(--bg-color);
   padding: 1rem 6rem;
+  margin-bottom: 2.5rem;
+  margin-top: 4%;
+
 }
 
 .more-about h2 {
@@ -139,6 +200,7 @@ nav ul li {
 
 .skills {
   max-width: 68.75rem;
+  width: 100%;
   margin: auto;
   text-align: center;
   margin-top: 2.5rem;
@@ -215,6 +277,7 @@ nav ul li {
 
 .contact {
   margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 
 .contact h2 {
@@ -224,7 +287,7 @@ nav ul li {
 
 .contact-form-container {
   max-width: 40.75rem;
-  margin: 0 auto;
+  margin:  auto;
   padding: 0.938rem;
   border-radius: 5px;
   box-shadow: 0 3px 10px var(--secondary-shadow);
@@ -295,6 +358,42 @@ footer {
   margin: 2rem 0 0;
 }
 
+.bio,
+.more-about,
+.skills,
+.projects,
+.contact,
+footer {
+  background-color: var(--bg-color); /* Set section background color to gray */
+}
+
+.input-field::placeholder {
+  padding: 0.5rem;
+  color: var(--secondary-color); /* Set placeholder text color to secondary color */
+}
+
+.contact-form-container label,
+.project-container p {
+  color: var(--primary-color); /* Set text color to white */
+}
+
+.projects {
+  background-color: var(--bg-color);
+  color: var(--primary-color); /* Set text color to primary color */
+  padding: 32px 0;
+  margin-top: 2rem;
+}
+
+/* Update background color and text color for project containers */
+.project-card {
+  background-color: var(--secondary-color); /* Set background color */
+  color: var(--bg-color); /* Set text color to background color for contrast */
+  border-radius: 11px;
+  box-shadow: 0 3px 10px var(--primary-shadow);
+  padding: 20px;
+  margin: 10px;
+}
+
 .scroll-up {
   position: fixed;
   right: 0.5%;
@@ -306,4 +405,105 @@ footer {
   width: 3rem;
   height: 3rem;
 }
+
+@media screen and (max-width: 720px) {
+  /*changes reflects on screen with a width of 720px and below*/
+  nav {
+    padding: 1.5rem 1rem;
+  }
+
+  nav ul {
+    position: fixed;
+    background-color: var(--bg-color);
+    flex-direction: column;
+    top: 86px;
+    left: 10%;
+    width: 80%;
+    text-align: center;
+    transform: translateX(120%);
+    transition: transform 0.5s ease-in;
+  }
+
+   nav ul li {
+    margin: 8px;
+  }
+
+  nav h1 {
+    text-align: center;
+    width: 100%;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+
+  nav ul.show {
+    transform: translateX(0);
+  }
+
+  .hero {
+    margin-top: -4rem;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hero img {
+        height: 37.5rem;
+        width: 30rem;
+    }
+
+  .bio {
+    margin-top: -7rem;
+    width: 20.5rem;
+  }
+
+  .more-about {
+    margin-top: 2rem;
+    padding: 1rem 3.5rem;
+  }
+
+  .more-about h2 {
+    text-align: center;
+  }
+
+  .more-about p {
+    text-align: justify;
+  }
+
+  .icon {
+    width: 5.875rem;
+    height: 5.25rem;
+  }
+
+  .projects-container {
+    flex-direction: column;
+  }
+
+  .project-container {
+    width: 20.875rem;
+  }
+
+  .contact-form-container {
+    max-width: 23.75rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .hero img {
+    height: 37.5rem;
+    width: 23rem;
+  }
+
+  .bio {
+    width: 18.3rem;
+  }
+
+  .project-container {
+    width: 17.875rem;
+  }
+
+  .contact-form-container {
+    max-width: 17.75rem;
+  }
+} 
 
