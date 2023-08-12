@@ -65,7 +65,6 @@
 </section>
    
 <!-- More about -->
-
     <section class="more-about">
       <h2>More About Me</h2>
       <p>
@@ -78,9 +77,9 @@
         My skills span an array of programming languages, from C++ to Flutter, alongside tools like MATLAB and GitHub. This diverse skill set equips me to explore novel avenues and bring fresh perspectives to every endeavor.
       </p>
     </section>
-   
+  </div>
+</div>
     <!-- Skills section -->
-
     <section class="skills" id="skills">
       <h2 class="skill-header">My Top Skills</h2>
 
@@ -134,12 +133,12 @@
       <div class="projects-container">
         <div class="project-container project-card">
           <img
-            src="assets/images/expenseTracker.png"
+            src="assets/images/mentalhealth.png"
             alt="expense-tracker"
             loading="lazy"
             class="project-pic"
           />
-          <h3 class="project-title">Expense Tracker</h3>
+          <h3 class="project-title">Mental Health Mobile Game</h3>
           <p class="project-details">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
             ratione vel inventore labore commodi modi quos culpa aut saepe!
@@ -164,24 +163,22 @@
         </div>
         <div class="project-container project-card">
           <img
-            src="assets/images/greenyEarth.png"
+            src="assets/images/sparsity.png"
             alt="greeny-earth"
             loading="lazy"
             class="project-pic"
           />
-          <h3 class="project-title">Greeny Earth</h3>
+          <h3 class="project-title">Sparsity Research</h3>
           <p class="project-details">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
-            ratione vel inventore labore commodi modi quos culpa aut saepe!
-            Alias!
+            Embarking on an exploration of numerical linear algebra, I undertook the creation of an LU decomposition code from scratch in MATLAB. This initial endeavor paved the way for a deeper exploration into the realm of sparsity optimization. Building upon this foundation, I engineered a bespoke implementation of LU decomposition that harnessed the intrinsic power of sparsity. This journey not only honed my coding prowess but also illuminated the intersection of algorithms and practical mathematics. 
           </p>
           <a href="#" target="_blank" class="project-link">Check it Out</a>
         </div>
       </div>
     </section>
-
+    </div>
     <!-- Contact section -->
-
+    <div class="contact fade-in">
     <section class="contact" id="contact">
       <h2>Get In Touch With Me</h2>
       <div class="contact-form-container">
@@ -231,7 +228,6 @@
         </div>
       </div>
     </section>
-
     <!-- Social accounts - Fixed to the right -->
 
     <div class="socials">
@@ -268,11 +264,11 @@
       class="socicon up-arrow"
       alt="scroll-up"
   /></i>
-  
+
     <!-- Footer section -->
 
     <footer>
-      <p class="copy">&copy; Copyright 2021</p>
+      <p class="copy">&copy; Copyright 2023</p>
       <p class="copy">
         Built with html; by
         <a href="https://twitter.com/koladechris" target="_blank"
