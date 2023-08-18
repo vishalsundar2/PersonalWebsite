@@ -72,3 +72,7 @@ function addClassWhenVisible(element, className) {
 
   // Initial call to fadeSections to apply the effect on page load
   fadeSections();
+
+  document.addEventListener("DOMContentLoaded", function () {
+    changeHeroImage();
+  });
