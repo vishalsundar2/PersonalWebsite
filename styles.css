@@ -1,24 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap");
 
 
-/* Variables */
-/* :root {
-  --font-family: "Montserrat", sans-serf;
-  --normal-font: 400;
-  --bold-font: 700;
-  --bolder-font: 900;
-  --bg-color: #fcfcfc;
-  --primary-color: #4756df;
-  --secondary-color: #ff7235;
-  --primary-shadow: #8b8eaf;
-  --secondary-shadow: #a17a69;
-  --bottom-margin: 0.5rem;
-  --bottom-margin-2: 1rem;
-  --line-height: 1.7rem;
-  --transition: 0.3s;
-} */
-
-
 :root {
   --font-family: "Montserrat", sans-serf;
   --normal-font: 400;
@@ -115,6 +97,13 @@ nav {
 
 }
 
+.navbar-hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
 nav h1 {
   color: var(--navbar-color);
   /* margin-left: 5rem; */
@@ -134,6 +123,30 @@ nav ul {
   gap: 1.9rem;
 }
 
+.navbar-title {
+  display: flex;
+  align-items: center;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem; /* Add spacing between the name and icons */
+}
+
+.nav-icon {
+  width: 3rem;
+  height: auto;
+  margin-left: 1rem; /* Add some spacing between the name and the icon */
+  vertical-align: middle; 
+}
+
+.nav-icon.doomicon {
+  width: 2.1rem;
+  height: auto;
+  margin-left: 1.rem;
+}
+
 nav ul li {
   font-weight: var(--bold-font);
 }
@@ -150,20 +163,43 @@ nav ul li {
 .hero {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 2.5rem;
   max-width: 68.75rem;
   margin: auto;
   margin-top: 2.5rem;
+  justify-content: flex-start; /* Align content to the left */
 }
 
-.hero img {
-  height: 37.5rem;
-  width: 37.5rem;
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  max-width: 100%;
+  margin: 0 2rem;
+  width: 100%; /* Ensure content takes full width */
+}
+
+.hero-img-container {
+  flex: 0 0 55%; /* Adjust the percentage as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px; 
+}
+
+.hero-img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0px 2px 15px 2px var(--primary-shadow);
 }
 
 .bio {
-  width: 25rem;
+  flex: 0 0 50%; /* Allow bio to take up 50% of available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 0.625rem;
   border-radius: 6px;
   box-shadow: 0px 2px 15px 2px var(--primary-shadow);
@@ -185,6 +221,9 @@ nav ul li {
   padding: 1rem 6rem;
   margin-bottom: 2.5rem;
   margin-top: 4%;
+  opacity: 0;
+  transform: translateY(20px); /* Move it down a bit to create a smoother effect */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Add transitions for smooth fade-in */
 
 }
 
@@ -204,6 +243,7 @@ nav ul li {
   margin: auto;
   text-align: center;
   margin-top: 2.5rem;
+  margin-bottom: 5rem;
 }
 
 .skill-header {
@@ -230,7 +270,6 @@ nav ul li {
 .projects {
   background-color: var(--bg-color);
   padding: 32px 0;
-  margin-top: 2rem;
 }
 
 .project-pic {
@@ -275,8 +314,31 @@ nav ul li {
   margin: 10px;
 }
 
+.resume-link {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.resume-link a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fdf5f5; /* Adjust color as needed */
+}
+
+.resume-icon {
+  width: 20px;
+  height: 30px;
+}
+
+.resume-text {
+  margin-top: 10rem;
+  font-size: 18px;
+}
+
 .contact {
-  margin-top: 2rem;
+  margin-top: 15rem;
   margin-bottom: 3rem;
 }
 
@@ -396,14 +458,15 @@ footer {
 
 .scroll-up {
   position: fixed;
-  right: 0.5%;
+  right: 5%;
   bottom: 3%;
   cursor: pointer;
+  z-index: 1000; /* Make sure it's above other elements */
 }
 
 .up-arrow {
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 7rem;
 }
 
 @media screen and (max-width: 720px) {
