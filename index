@@ -18,7 +18,7 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="assets/icons/favicon-32x32.png"
+      href="assets/icons/letter-v.png"
     />
 
     <!-- Animate CSS CDN -->
@@ -30,12 +30,45 @@
     <title>Vishal Sundar | Software Engineer</title>
   </head>
 
-  <body>
+  <script>
+    const heroImages = [
+      "assets/images/mentalhealth.png",
+      "assets/images/ddgame.png",
+      "assets/images/sparsity.png",
+      // Add more image paths as needed
+    ];
   
-    <!-- Navbar -->
+    let currentImageIndex = 0;
+  
+    function changeHeroImage() {
+      const heroImage = document.getElementById("hero-image");
+      currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+      heroImage.src = heroImages[currentImageIndex];
+    }
 
+    setInterval(changeHeroImage, 2000);
+  </script>
+
+  <body>
+    <!-- Navbar -->
+    <div class="navbar-hero-container">
     <nav>
-      <h1>VISHAL SUNDAR</h1>
+      <h1 class="navbar-title">
+        VISHAL SUNDAR
+        <img
+          src="assets/icons/noun-software-engineer-3174293.png"
+          alt="Software Engineer Icon"
+          class="nav-icon"
+        />
+        <a href="https://docs.google.com/document/d/150h-dwdBRXUfE3gT8CkrsxYr5UFSFOrRXt9pA5T8rdM/edit?usp=sharing" target="_blank">
+          <img
+            src="assets/icons/doomicon2.png"
+            alt="doomicon"
+            class="nav-icon doomicon"
+          />
+        </a>
+      </h1>
+
       <ul class="navigation">
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
@@ -50,21 +83,28 @@
     <!-- Hero Section -->
 
      <section class="hero" id="about">
-      <img
-        src="https://cdn.pixabay.com/photo/2023/05/25/09/00/bus-8016675_1280.jpg"
-        alt="jane-doe"
-        loading="lazy"
-        class="hero-img"
-      />
+      <div class="hero-content">
+        <div class="hero-img-container">
+          <img
+            src="assets/images/greenyEarth.png"
+            alt="jane-doe"
+            loading="lazy"
+            class="hero-img"
+            id="hero-image"
+            onclick="changeHeroImage()" 
+          />
+      </div>
       <div class="bio animate__animated animate__shakeX">
         <h2 class="bio-title">About Me</h2>
         <p class="bio-text">
           I'm passionate about leveraging technology to drive positive change. With a solid foundation in Computer Science and a penchant for innovative problem-solving, I strive to make an impact that transcends lines of code.
         </p>
       </div>
+    </div>
 </section>
-   
+
 <!-- More about -->
+
     <section class="more-about">
       <h2>More About Me</h2>
       <p>
@@ -82,9 +122,10 @@
     <!-- Skills section -->
     <section class="skills" id="skills">
       <h2 class="skill-header">My Top Skills</h2>
-
+    
       <div class="skills-wrapper">
-        <div class="first-set animate__animated animate__pulse">
+        <!-- First row of icons -->
+        <div class="row animate__animated animate__pulse">
           <img
             src="assets/icons/icons8-html-5.svg"
             alt=""
@@ -103,11 +144,18 @@
             loading="lazy"
             class="icon icon-card"
           />
-        </div>
-
-        <div class="second-set animate__animated animate__pulse">
           <img
-            src="assets/icons/icons8-bootstrap.svg"
+            src="assets/icons/icons8-figma.svg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+        </div>
+    
+        <!-- Second row of icons -->
+        <div class="row animate__animated animate__pulse">
+          <img
+            src="assets/icons/icons8-java.svg"
             alt=""
             loading="lazy"
             class="icon icon-card"
@@ -119,7 +167,13 @@
             class="icon icon-card"
           />
           <img
-            src="assets/icons/icons8-git.svg"
+            src="assets/icons/icons8-c++.svg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+          <img
+            src="assets/icons/icons8-python.svg"
             alt=""
             loading="lazy"
             class="icon icon-card"
@@ -127,6 +181,7 @@
         </div>
       </div>
     </section>
+    
     <!-- Projects section -->
 <section class="projects" id="projects">
       <h2 class="projects-title">Some of my Recent Projects</h2>
@@ -139,44 +194,55 @@
             class="project-pic"
           />
           <h3 class="project-title">Mental Health Mobile Game</h3>
-          <p class="project-details">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
-            ratione vel inventore labore commodi modi quos culpa aut saepe!
-            Alias!
-          </p>
-          <a href="#" target="_blank" class="project-link">Check it Out</a>
-        </div>
-        <div class="project-container project-card">
-          <img
-            src="assets/images/netflixClone.png"
-            alt="netflic-clone"
-            loading="lazy"
-            class="project-pic"
-          />
-          <h3 class="project-title">Netflix Clone</h3>
-          <p class="project-details">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
-            ratione vel inventore labore commodi modi quos culpa aut saepe!
-            Alias!
-          </p>
-          <a href="#" target="_blank" class="project-link">Check it Out</a>
-        </div>
-        <div class="project-container project-card">
-          <img
-            src="assets/images/sparsity.png"
-            alt="greeny-earth"
-            loading="lazy"
-            class="project-pic"
-          />
-          <h3 class="project-title">Sparsity Research</h3>
-          <p class="project-details">
-            Embarking on an exploration of numerical linear algebra, I undertook the creation of an LU decomposition code from scratch in MATLAB. This initial endeavor paved the way for a deeper exploration into the realm of sparsity optimization. Building upon this foundation, I engineered a bespoke implementation of LU decomposition that harnessed the intrinsic power of sparsity. This journey not only honed my coding prowess but also illuminated the intersection of algorithms and practical mathematics. 
-          </p>
-          <a href="#" target="_blank" class="project-link">Check it Out</a>
-        </div>
-      </div>
-    </section>
+      <p class="project-details">
+        As the Mental Health Mobile Game Research Lead and Software Developer, I collaborated to create a mobile game designed to empower Native Americans, particularly Hopi tribe members, facing mental health challenges. Through manual conversion of Figma wireframes to the dynamic Flutter app development platform, I ensured the game's accessibility across devices. By researching into the intricacies of Hopi culture, I worked to bridge the gap, addressing mental health disparities and nurturing individual resilience.
+      </p>
+      <a href="https://drive.google.com/drive/folders/1QyqpANg_QWqdDRm-dHfDPD_ueayp2md2?usp=sharing" target="_blank" class="project-link">Check it Out</a>
     </div>
+    <div class="project-container project-card">
+      <img
+        src="assets/images/sparsity.png"
+        alt="greeny-earth"
+        loading="lazy"
+        class="project-pic"
+      />
+      <h3 class="project-title">Sparsity Research</h3>
+      <p class="project-details">
+        Embarking on an exploration of numerical linear algebra, I undertook the creation of an LU decomposition code from scratch in MATLAB. This initial endeavor paved the way for a deeper exploration into the realm of sparsity optimization. Building upon this foundation, I engineered a bespoke implementation of LU decomposition that harnessed the intrinsic power of sparsity. This journey not only honed my coding prowess but also illuminated the intersection of algorithms and practical mathematics.
+      </p>
+      <a href="https://vvishal.notion.site/Sparsity-553f4e71c04a4b6dbef191d9f6c4c437?pvs=4" target="_blank" class="project-link">Check it Out</a>
+    </div>
+    <div class="project-container project-card">
+      <img
+        src="assets/images/ddgame.png"
+        alt="netflix-clone"
+        loading="lazy"
+        class="project-pic"
+      />
+      <h3 class="project-title">Dungeons&Dragons</h3>
+      <p class="project-details">
+        Dungeons and Dragons-inspired game crafted with Java showcasing my object-oriented programming skills. Will your party emerge victorious or face defeat? 
+      </p>
+      <a href="https://github.com/vishalsundar2/Dungeons-Dragons.git" target="_blank" class="project-link">Check it Out</a>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- Link to Resume -->
+<div class="resume-link">
+  <a href="https://vvishal.notion.site/Resume-91c9f8f0c2b249b49355f2e54a2323da?pvs=4" target="_blank">
+    <div class="resume-icon">
+      <img
+        src="assets/icons/icons8-resume-50.png"
+        alt="doomicon"
+        class="icon"
+      />
+    </div>
+    <span class="resume-text">View My Resume</span>
+  </a>
+</div>
+
     <!-- Contact section -->
     <div class="contact fade-in">
     <section class="contact" id="contact">
@@ -209,6 +275,7 @@
             <div class="form-control">
               <label for="message">Message</label>
               <textarea
+                type="text"
                 id="message"
                 cols="60"
                 rows="10"
@@ -231,36 +298,29 @@
     <!-- Social accounts - Fixed to the right -->
 
     <div class="socials">
-      <a href="#" target="_blank"
+      <a href="https://www.instagram.com/vvsun__/" target="_blank"
         ><img
-          src="assets/icons/icons8-twitter-circled.gif"
-          alt="Twitter"
-          loading="lazy"
-          class="socicon"
-      /></a>
-      <a href="#" target="_blank"
-        ><img
-          src="assets/icons/icons8-instagram.gif"
+          src="assets/icons/icons8-instagram.png"
           alt="Instagram"
           loading="lazy"
           class="socicon"
       /></a>
-      <a href="#" target="_blank"
+      <a href="https://www.linkedin.com/in/vishal-sundar-61b725255" target="_blank"
         ><img
-          src="assets/icons/icons8-linkedin-circled.gif"
+          src="assets/icons/icons8-linkedin-circled.png"
           alt="Linkedin"
           loading="lazy"
           class="socicon"
       /></a>
-      <a href="#" target="_blank"
-        ><img src="assets/icons/icons8-github.gif" alt="Github" class="socicon"
+      <a href="https://github.com/vishalsundar2" target="_blank"
+        ><img src="assets/icons/icons8-github.png" alt="Github" class="socicon"
       /></a>
 
     <!-- Scroll to top -->
 
     <i class="scroll-up" id="scroll-up"
     ><img
-      src="assets/icons/icons8-upward-arrow.gif"
+      src="https://media.giphy.com/media/RfRc2K5oiqV9dDaz2p/giphy.gif"
       class="socicon up-arrow"
       alt="scroll-up"
   /></i>
